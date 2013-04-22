@@ -638,7 +638,7 @@ class KtaiShrinkage{
         if( isset( $attr['alt'] ) ){
             $alt = stripslashes( $attr['alt'] );
             if( empty( $alt ) && ( !isset( $attr['class'] ) || !preg_match( '/(^| )(wp-image-\d+|attachment-\dx\d)( |$)/', $attr['class'] ) ) ){
-                $is_useless = TRUE; // hide images if the alt string is empty. 
+                $is_useless = TRUE; // hide images if the alt string is empty.
             }
         }
         if( ( isset( $attr['width'] ) && $attr['width'] <= 1 ) || ( isset( $attr['height'] ) && $attr['height'] <= 1 ) ){
@@ -685,7 +685,8 @@ class KtaiShrinkage{
  */
     private function create_thumbnail( $img_path, $thumb_path ){
         $size = $this->create_alter_image( $img_path, TRUE );
-        $max_size = apply_filters( 'ktai_thumbnail_max_size', self::THUMBNAIL_MAX_SIZE );
+        $thumbnail_max_size = ( ks_option( "ks_setting_image_width" ) != NULL ) ? ks_option( "ks_setting_image_width" ) : self::THUMBNAIL_MAX_SIZE;
+        $max_size = apply_filters( 'ktai_thumbnail_max_size', $thumbnail_max_size );
         $max_size = apply_filters( 'thumbnail_max_size/ktai_style.php', $max_size );
         if( is_ks_error( $size ) ){
             return $size;
@@ -1249,7 +1250,7 @@ class KtaiShrinkage{
             }
             $url .= ( strpos( $url, '?' ) === FALSE ? '?' : '&amp;' ) . "img=$value"; // can not use add_query_arg()
             $replace = sprintf( '<a %shref="%s"%s>', $attr1, $url, $attr2 );
-            $buffer = substr_replace( $buffer, $replace, $offset, strlen( $orig ) ); // convert links		
+            $buffer = substr_replace( $buffer, $replace, $offset, strlen( $orig ) ); // convert links
         }
 
         return $buffer;

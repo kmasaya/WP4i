@@ -184,6 +184,15 @@ msgstr "携帯テーマ設定"
 msgid "Color &amp; Format"
 msgstr "色と書式"
 
+msgid "Mobile Setting Configuration"
+msgstr "携帯設定"
+
+msgid "Image size and Format Setting"
+msgstr "画像サイズとフォーマットの設定"
+
+msgid "Image Width"
+msgstr "画像の幅"
+
 msgid "Delete Configuration"
 msgstr "設定の削除"
 

@@ -1,0 +1,23 @@
+<div class="wrap">
+    <div id="icon-ktaistyle" class="icon32"><br/></div>
+    <h2><?php _e('Mobile Setting Configuration', 'ktai_style' ); ?></h2>
+
+    <form name="form" method="post" action="">
+        <input type="hidden" name="action" value="update"/>
+	<?php wp_nonce_field( self::SETTING_OPTIONS ); ?>
+
+        <h3 id="image_setting"><?php _e( 'Image size and Format Setting', 'ktai_style' ); ?></h3>
+        <table class="form-table">
+          <tbody>
+            <tr>
+                <th><label for="ks_setting_image_width"><?php _e('Image Width', 'ktai_style' ); ?></label></th>
+                <td><input type="text" value="<?php echo $setting_image_width ?>" name="ks_setting_image_width" id="setting_image_width"/></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p class="submit">
+            <input type="submit" name="update_option" class="button-primary" value="<?php _e( 'Save Changes' ); ?>"/>
+        </p>
+    </form>
+</div>

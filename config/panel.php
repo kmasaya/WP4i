@@ -8,6 +8,7 @@ class KtaiStyle_Config{
     const OPTIONS = 'ktai_style';
     const THEME_OPTIONS = 'ktai_style_theme';
     const COLOR_OPTIONS = 'ktai_style_color';
+    const SETTING_OPTIONS = 'ktai_style_setting';
     const DELETE_OPTIONS = 'ktai_style_delete';
     const LINK_COLOR_URL_EXAMPLE = 'http://wppluginsj.sourceforge.jp/';
     const THEMES_PER_PAGE = 6;
@@ -49,6 +50,7 @@ class KtaiStyle_Config{
         add_action( 'load-' . get_plugin_page_hookname( self::THEME_OPTIONS, '' ), array( $this, 'theme_page_header' ) );
         add_action( 'load-' . get_plugin_page_hookname( self::THEME_OPTIONS, '' ), array( $this, 'update_common_theme' ) );
         add_submenu_page( self::OPTIONS, __( 'Mobile Theme Configuration', 'ktai_style' ), __( 'Color &amp; Format', 'ktai_style' ), 'manage_options', self::COLOR_OPTIONS, array( $this, 'color_page' ) );
+        add_submenu_page( self::OPTIONS, "Config", "設定", "manage_options", "ktai_style_setting", array( $this, "setting_page" ) );
         add_submenu_page( self::OPTIONS, __( 'Delete Configuration', 'ktai_style' ), __( 'Delete Options', 'ktai_style' ), 'manage_options', self::DELETE_OPTIONS, array( $this, 'delete_page' ) );
         add_action( 'admin_print_styles', array( $this, 'icon_style' ) );
     }
@@ -544,6 +546,36 @@ class KtaiStyle_Config{
     <?php
     }
 
+    /**
+     * @access public
+     * @param none
+     * @return none
+     */
+    public function setting_page(){
+        global $Ktai_Style;
+
+        register_setting( self::SETTING_OPTIONS, 'ks_setting_image_width' );
+
+        if( isset( $_POST['update_option'] ) ){
+            check_admin_referer( self::SETTING_OPTIONS );
+            $this->update_settings();
+            ?>
+            <div class="updated fade"><p><strong><?php _e( 'Options saved.' ); ?></strong></p></div>
+        <?php
+        }
+
+        $setting_image_width = $Ktai_Style->get_option( 'ks_setting_image_width' );
+
+        $template_filename = dirname( WP_PLUGIN_DIR . "/" . plugin_basename( __FILE__ ) ) . "/template/setting_page.tmpl";
+
+        ob_start();
+        include( $template_filename );
+        $contents = ob_get_contents();
+        ob_end_clean();
+
+        echo $contents;
+    }
+
     /* ==================================================
      * @param	none
      * @return	none
@@ -717,6 +749,17 @@ class KtaiStyle_Config{
         return;
     }
 
+    /**
+     * @access private
+     * @param none
+     * @return none
+     */
+    private function update_settings(){
+        $this->update_int_option( "ks_setting_image_width" );
+
+        return;
+    }
+
     /* ==================================================
      * @param	string  $key
      * @return	none
@@ -733,6 +776,21 @@ class KtaiStyle_Config{
         if( !empty( $_POST[$key] ) ){
             if( preg_match( '/^#[0-9a-fA-F]{6}$/', $_POST[$key] ) ){
                 update_option( $key, $_POST[$key] );
+            }
+        } else{
+            delete_option( $key );
+        }
+    }
+
+    /**
+     * @access private
+     * @param string $key
+     * @return none
+     */
+    private function update_int_option( $key ){
+        if( !empty( $_POST[$key] ) ){
+            if( is_numeric( $_POST[$key] ) ){
+                update_option( $key, intval( $_POST[$key] ) );
             }
         } else{
             delete_option( $key );
