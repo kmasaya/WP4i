@@ -18,7 +18,7 @@ class KtaiStyle_Config{
         add_action( 'admin_menu', array( $this, 'add_menu' ) );
         add_action( 'admin_init', array( $this, 'add_comment_meta' ) );
         add_filter( 'plugin_action_links', array( $this, 'add_link' ), 10, 2 );
-        if( $_GET['page'] == self::THEME_OPTIONS ){
+        if( isset( $_GET['page'] ) AND $_GET['page'] == self::THEME_OPTIONS ){
             remove_action( 'setup_theme', 'preview_theme' );
             add_action( 'setup_theme', array( 'KtaiThemes', 'preview_theme' ) );
         }
