@@ -166,10 +166,14 @@ class KtaiThemes{
         }
         $this->template_uri = $this->theme_root_uri . $this->theme_base . '/'; // trailing slash
 
-        $this->theme_data = get_theme_data( $this->template_dir . 'style.css' );
+        $theme_path_array = explode( "/", $this->template_dir );
+        array_pop( $theme_path_array );
+        array_pop( $theme_path_array );
+        $theme_path = join( "/", $theme_path_array ) . "/";
+        $this->theme_data = wp_get_theme( $this->theme_base, $theme_path );
         foreach( array( 'png', 'jpg', 'gif' ) as $ext ){
             if( file_exists( $this->template_dir . self::SCREENSHOT_BASENAME . '.' . $ext ) ){
-                $this->theme_data['Screenshot'] = $this->template_uri . self::SCREENSHOT_BASENAME . '.' . $ext;
+                $this->theme_data->Screenshot = $this->template_uri . self::SCREENSHOT_BASENAME . '.' . $ext;
                 break;
             }
         }
@@ -496,10 +500,10 @@ class KtaiThemes{
      */
     public static function installed(){
         self::set_variables();
-        $theme_data = get_theme_data( self::$built_in_theme_root . self::DEFAULT_THEME . '/style.css' );
+        $theme_data = wp_get_theme( self::DEFAULT_THEME, self::$built_in_theme_root );
         $themes = array();
-        if( isset( $theme_data['Name'] ) ){
-            $themes[self::DEFAULT_THEME] = $theme_data['Name'] . ' (' . $theme_data['Version'] . ')';
+        if( isset( $theme_data->Name ) ){
+            $themes[self::DEFAULT_THEME] = $theme_data->Name . ' (' . $theme_data->Version . ')';
         } else{
             $theme[self::DEFAULT_THEME] = 'Default';
         }
@@ -508,8 +512,8 @@ class KtaiThemes{
                 continue;
             }
             if( preg_match( '!/([-_.+a-zA-Z0-9]+)/?$!', $d, $filename ) && $filename[1] != self::DEFAULT_THEME ){
-                $theme_data = get_theme_data( $d . '/style.css' );
-                $themes[$filename[1]] = $theme_data['Name'] . ' (' . $theme_data['Version'] . ')';
+                $theme_data = wp_get_theme( array_pop( explode( "/", $d ) ), self::$built_in_theme_root );
+                $themes[$filename[1]] = $theme_data->Name . ' (' . $theme_data->Version . ')';
             }
         }
         if( !file_exists( WP_CONTENT_DIR . '/' . self::USER_THEMES_DIR ) ){
@@ -520,8 +524,11 @@ class KtaiThemes{
                 continue;
             }
             if( preg_match( '!/([-_.+a-zA-Z0-9]+)/?$!', $d, $filename ) && !in_array( $filename[1], $themes ) ){
-                $theme_data = get_theme_data( $d . '/style.css' );
-                $themes[self::USER_THEMES_DIR . '/' . $filename[1]] = $theme_data['Name'] . ' (' . $theme_data['Version'] . ')';
+                $theme_path_array = explode( "/", $d );
+                $theme_name = array_pop( $theme_path_array );
+                $theme_path = join( "/", $theme_path_array ) . "/";
+                $theme_data = wp_get_theme( $theme_name, $theme_path );
+                $themes[self::USER_THEMES_DIR . '/' . $filename[1]] = $theme_data->Name . ' (' . $theme_data->Version . ')';
             }
         }
 

@@ -235,17 +235,17 @@ class KtaiStyle_Config{
             <div id="current-theme">
                 <?php
                 $theme_data = $ct->get( 'theme_data' );
-                if( isset( $theme_data['Screenshot'] ) ){
+                if( isset( $theme_data->Screenshot ) ){
                     ?>
-                    <img src="<?php echo $theme_data['Screenshot']; ?>" alt="<?php _e( 'Current theme preview' ); ?>"
+                    <img src="<?php echo $theme_data->Screenshot; ?>" alt="<?php _e( 'Current theme preview' ); ?>"
                          style="width:120px"/>
                 <?php } ?>
                 <h4><?php
-                    printf( __( '%1$s %2$s by %3$s', 'ktai_style' ), $theme_data['Name'], $theme_data['Version'], $theme_data['Author'] ); ?></h4>
+                    printf( __( '%1$s %2$s by %3$s', 'ktai_style' ), $theme_data->Name, $theme_data->Version, $theme_data->Author ); ?></h4>
 
-                <p class="theme-description"><?php echo $theme_data['Description']; ?></p>
+                <p class="theme-description"><?php echo $theme_data->Description; ?></p>
             </div>
-            <p><?php printf( __( 'All of this theme&#8217;s files are located in <code>%2$s</code>.' ), $theme_data['Name'], str_replace( WP_CONTENT_DIR, '', $ct->get( 'template_dir' ) ) ); ?></p>
+            <p><?php printf( __( 'All of this theme&#8217;s files are located in <code>%2$s</code>.' ), $theme_data->Name, str_replace( WP_CONTENT_DIR, '', $ct->get( 'template_dir' ) ) ); ?></p>
 
             <div class="clear"></div>
             <h3><?php _e( 'Available Themes' ); ?></h3>
@@ -291,14 +291,12 @@ class KtaiStyle_Config{
                                 ?>
                                 <td class="<?php echo join( ' ', $class ); ?>">
                                     <?php if( !empty( $theme_name ) ) :
-                                        $title = $theme_data['Name'];
-                                        $version = $theme_data['Version'];
-                                        $description = $theme_data['Description'];
-                                        $author = $theme_data['Author'];
-                                        $screenshot = $theme_data['Screenshot'];
+                                        $title = $theme_data->Name;
+                                        $version = $theme_data->Version;
+                                        $description = $theme_data->Description;
+                                        $author = $theme_data->Author;
+                                        $screenshot = $theme_data->Screenshot;
                                         $template_dir = $t->get( 'template_dir' );
-                                        $theme_root = $theme_data['Theme Root'];
-                                        $theme_root_uri = $$theme_data['Theme Root URI'];
                                         $preview_link = esc_attr( get_option( 'home' ) . '/' );
                                         if( is_ssl() ){
                                             $preview_link = str_replace( 'http://', 'https://', $preview_link );
