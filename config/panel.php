@@ -325,7 +325,7 @@ class KtaiStyle_Config{
                                             printf( __( '%1$s %2$s by %3$s', 'ktai_style' ), $title, $version, $author ); ?></h3>
                                         <p class="description"><?php echo $description; ?></p>
                                         <span class='action-links'><?php echo $actions ?></span>
-                                        <p><?php printf( __( 'All of this theme&#8217;s files are located in <code>%2$s</code>.' ), $title, str_replace( WP_CONTENT_DIR, '', $template_dir ), str_replace( WP_CONTENT_DIR, '', $stylesheet_dir ) ); ?></p>
+                                        <p><?php printf( __( 'All of this theme&#8217;s files are located in <code>%1$s</code>.' ), str_replace( WP_CONTENT_DIR, '', $template_dir ) ); ?></p>
                                     <?php endif; // end if not empty theme_name ?>
                                 </td>
                             <?php } // end foreach $cols ?>
