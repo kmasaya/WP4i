@@ -1,3 +1,3 @@
-<?php 
-load_theme_textdomain('redportal', dirname(__FILE__));
+<?php
+load_theme_textdomain( 'redportal', dirname( __FILE__ ) );
 ?>
