@@ -238,7 +238,7 @@ class KtaiStyle_Config{
                 if( isset( $theme_data->Screenshot ) ){
                     ?>
                     <img src="<?php echo $theme_data->Screenshot; ?>" alt="<?php _e( 'Current theme preview' ); ?>"
-                         style="width:120px"/>
+                         style="width:120px; margin-left:0;"/>
                 <?php } ?>
                 <h4><?php
                     printf( __( '%1$s %2$s by %3$s', 'ktai_style' ), $theme_data->Name, $theme_data->Version, $theme_data->Author ); ?></h4>
