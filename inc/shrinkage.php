@@ -670,7 +670,8 @@ class KtaiShrinkage{
         } else{
             $target = $path;
         }
-        $thumb = dirname( $path ) . '/' . $base . self::THUMBNAIL_FILENAME . $ext;
+        $size = "." . ks_option( "ks_setting_image_width" );
+        $thumb = dirname( $path ) . '/' . $base . self::THUMBNAIL_FILENAME . $size . $ext;
         if( !file_exists( $thumb ) ){
             $thumb = $this->create_thumbnail( $target, $thumb );
         }
