@@ -2,7 +2,7 @@
 global $ks_settings;
 if( have_posts() ) :
     if( is_archive() || is_search() ){
-        $post = $posts[0]; // Hack. Set $post so that the_date() works.
+        //$post = $posts[0]; // Hack. Set $post so that the_date() works.
         ks_pagenum( '<h2>', '</h2>' );
     } ?>
     <!--start paging-->
