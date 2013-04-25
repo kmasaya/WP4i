@@ -69,7 +69,7 @@ class KtaiShrinkage{
         }
         $url_parts = parse_url( $this->url );
         $wpurl_parts = parse_url( $this->wpurl );
-        $this->url_host = $url_parts['scheme'] . '://' . $url_parts['host'] . ( $url_parts['port'] ? ':' . $url_parts['port'] : '' );
+        $this->url_host = $url_parts['scheme'] . '://' . $url_parts['host'] . ( ( array_key_exists( "port", $url_parts ) AND $url_parts['port'] ) ? ':' . $url_parts['port'] : '' );
         if( !$this->is_multisite ){ // single site
             $uploads = wp_upload_dir();
             $uploads_url = trailingslashit( $uploads['baseurl'] );
