@@ -140,7 +140,7 @@ class Ktai_HTML_Filter{
 
             else{
                 # sanitize string from bad protocols
-                if( 'y' != $arreach['vless'] && 'uri' == $current['type'] ){
+                if( 'y' != $arreach['vless'] && array_key_exists( "type", $current ) AND 'uri' == $current['type'] ){
                     $arreach['value'] = self::kses_bad_protocol( $arreach['value'] );
                     $arreach['whole'] = sprintf( '%s="%s"', $arreach['name'], $arreach['value'] );
                 }
