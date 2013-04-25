@@ -2032,7 +2032,7 @@ function ks_pages_menu(){
             $has_children++;
             continue;
         }
-        $menu[] = '<a href="' . KtaiStyle::strip_host( get_page_link( $p->ID ) ) . '"' . $style . '>' . $a_open . esc_attr( $p->post_title ) . $a_close . '</a>';
+        $menu[] = '<a href="' . KtaiStyle::strip_host( get_page_link( $p->ID ) ) . '"' . '>' . $a_open . esc_attr( $p->post_title ) . $a_close . '</a>';
     }
     if( $has_children ){
         $menu[] = '<a href="' . ks_blogurl( KTAI_NOT_ECHO ) . '?menu=pages">' . $a_open . $r['all_page_anchor'] . $a_close . '</a>';
