@@ -31,7 +31,7 @@ require dirname( __FILE__ ) . '/shrinkage.php';
  */
 function _ks_parse_arg( $func_get_args, $defaults = '' ){
     $r = array();
-    $arg = $func_get_args[0];
+    $arg = isset( $func_get_args[0] ) ? $func_get_args[0] : NULL;
     if( is_object( $arg ) ){
         $r = get_object_vars( $arg );
         if( is_array( $defaults ) ){
