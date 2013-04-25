@@ -539,9 +539,9 @@ function ks_page_title(){
     } else{
         $before = isset( $r['before_logo'] ) ? $r['before_logo'] : $r['before'];
         $after = isset( $r['after_logo'] ) ? $r['after_logo'] : $r['after'];
-        if( $r['logo_file'] ){
+        if( array_key_exists( "logo_file", $r) AND $r['logo_file'] ){
             $title = sprintf( '<img src="%s%s" alt="%s" />', ks_theme_url( KTAI_NOT_ECHO ), $r['logo_file'], get_bloginfo( 'name' ) );
-        } elseif( $r['logo_html'] ){
+        } elseif( array_key_exists( "logo_html", $r) AND $r['logo_html'] ){
             $title = $r['logo_html'];
         } else{
             $title = get_bloginfo( 'name' );
@@ -1550,7 +1550,7 @@ function ks_comments_post_url( $id = 0 ){
  * @param	string  $before
  * @param	string  $after
  * @param	string  $icon
- * @param	string  $accesskey 
+ * @param	string  $accesskey
  * @param   boolean $echo
  * @return	string  $output
  */
