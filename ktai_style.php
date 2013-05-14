@@ -1,17 +1,18 @@
 <?php
 /*
-Plugin Name: Ktai Style
-Plugin URI: http://wordpress.org/extend/plugins/ktai-style/
-Version: 2.0.5
+Plugin Name: WP4i
+Plugin URI: http://w32.jp/
+Version: 0.0.1
 Description: Provides lightweight pages and simple admin interfaces for mobile phones.
-Author: IKEDA Yuriko
-Author URI: http://en.yuriko.net/
-Text Domain: ktai_style
+Author: Katou Masaya
+Author URI: http://w32.jp/
+Text Domain: wp4i
 Domain Path: /lang
 */
-define ( 'KTAI_STYLE_VERSION', '2.0.5' );
+define ( 'WP4I_VERSION', '0.0.1' );
 
 /*  Copyright (c) 2007-2011 IKEDA Yuriko
+    Copyright (c) 2013 Katou Masaya
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; version 2 of the License.

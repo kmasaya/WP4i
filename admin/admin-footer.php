@@ -8,7 +8,7 @@
     <a name="tail" href="#head"><img localsrc="29"
                                      alt="<?php _e( '&uarr;', 'ktai_style' ); ?>"/></a>| <?php include_once dirname( __FILE__ ) . '/menu-header.php'; ?>
     <hr color="#4f96c8"/>
-    <div align="right">Ktai Style <?php echo KTAI_STYLE_VERSION; ?></div>
+    <div align="right">Ktai Style <?php echo WP4I_VERSION; ?></div>
     </body></html>
 <?php
 global $Ktai_Style, $page_charset, $iana_charset, $mime_type;
