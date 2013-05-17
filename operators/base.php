@@ -69,7 +69,7 @@ class KtaiServices{
         } elseif( preg_match( '!^(Vodafone/|MOT(EMULATOR)?-[CV]|SoftBank/|[VS]emulator/)!', $ua ) ){
             require_once dirname( __FILE__ ) . '/softbank.php';
             $ktai = new KtaiService_Softbank_3G( $ua );
-        } elseif( preg_match( '/(DDIPOCKET|WILLCOM);/', $ua ) ){
+        } elseif( preg_match( '/(WILLCOM);/', $ua ) ){
             require_once dirname( __FILE__ ) . '/willcom.php';
             $ktai = new KtaiService_WILLCOM( $ua );
         } elseif( preg_match( '!^(emobile|Huawei|IAC)/!', $ua ) ){
