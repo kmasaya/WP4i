@@ -50,7 +50,7 @@ class KtaiStyle_Config{
         add_action( 'load-' . get_plugin_page_hookname( self::THEME_OPTIONS, '' ), array( $this, 'theme_page_header' ) );
         add_action( 'load-' . get_plugin_page_hookname( self::THEME_OPTIONS, '' ), array( $this, 'update_common_theme' ) );
         add_submenu_page( self::OPTIONS, __( 'Mobile Theme Configuration', 'ktai_style' ), __( 'Color &amp; Format', 'ktai_style' ), 'manage_options', self::COLOR_OPTIONS, array( $this, 'color_page' ) );
-        add_submenu_page( self::OPTIONS, "Config", "設定", "manage_options", "ktai_style_setting", array( $this, "setting_page" ) );
+        add_submenu_page( self::OPTIONS, __( 'Mobile Setting', 'ktai_style' ), __( 'Mobile Setting', 'ktai_style' ), "manage_options", "ktai_style_setting", array( $this, "setting_page" ) );
         add_submenu_page( self::OPTIONS, __( 'Delete Configuration', 'ktai_style' ), __( 'Delete Options', 'ktai_style' ), 'manage_options', self::DELETE_OPTIONS, array( $this, 'delete_page' ) );
         add_action( 'admin_print_styles', array( $this, 'icon_style' ) );
     }

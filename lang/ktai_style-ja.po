@@ -24,9 +24,6 @@ msgstr "携帯電話用に軽量化したページおよび簡単な管理イン
 msgid "Katou Masaya"
 msgstr "加藤真也"
 
-msgid "http://w32.jp/"
-msgstr "http://w32.jp/"
-
 msgid "Can't display pages. Bacause mobile phone templates are collapsed."
 msgstr "携帯電話向けテンプレートが壊れているため表示できません。"
 
@@ -351,6 +348,9 @@ msgstr "オプションを削除しました。"
 
 msgid "Poster's terminal ID and subscriber ID"
 msgstr "投稿者の端末番号・契約者ID"
+
+msgid "Mobile Setting"
+msgstr "設定"
 
 #, php-format
 msgid "Term ID: %s"
@@ -1133,4 +1133,3 @@ msgstr[0] "次の%d件.#"
 # ----- themes/redportal/footer.php --------------------------------------------------
 msgid "&dagger;"
 msgstr "†"
-
