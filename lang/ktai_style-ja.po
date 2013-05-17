@@ -253,9 +253,6 @@ msgstr "%1$s %2$s : %3$s 作"
 msgid "Theme for each career"
 msgstr "電話キャリア別テーマ"
 
-msgid "For mova (docomo)"
-msgstr "mova 用 (ドコモ)"
-
 msgid "For FOMA (docomo)"
 msgstr "FOMA 用 (ドコモ)"
 

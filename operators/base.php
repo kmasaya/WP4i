@@ -59,9 +59,6 @@ class KtaiServices{
         if( isset( $_GET['preview'] ) && isset( $_GET['mobile'] ) ){
             $ua = 'Ktai_Theme_Preview';
             $ktai = new KtaiService_Preview( $ua );
-        } elseif( preg_match( '!^DoCoMo/1!', $ua ) ){
-            require_once dirname( __FILE__ ) . '/i-mode.php';
-            $ktai = new KtaiService_imode_mova( $ua );
         } elseif( preg_match( '!^DoCoMo/2!', $ua ) ){
             require_once dirname( __FILE__ ) . '/i-mode.php';
             if( preg_match( '/\(c(\d+);/', $ua, $cache ) && $cache[1] >= 500 ){

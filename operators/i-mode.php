@@ -61,7 +61,7 @@ public function __construct($user_agent) {
 		'd001' => "\xf8\x9f", // 晴れ
 		'd002' => "\xf8\xa0", // 曇り
 		'd003' => "\xf8\xa1", // 雨
-		'd004' => "\xf8\xa2", // 雪 
+		'd004' => "\xf8\xa2", // 雪
 		'd005' => "\xf8\xa3", // 雷
 		'd006' => "\xf8\xa4", // 台風
 		'd007' => "\xf8\xa5", // 霧
@@ -1245,7 +1245,7 @@ public function convert_pict($buffer) {
 		'se239' => self::$pictograms['d104'], // 左下
 		'se23a' => '＞', // 次へ
 		'se23b' => '＜', // 前へ
-		'se23c' => '≫', // 早送り 
+		'se23c' => '≫', // 早送り
 		'se23d' => '≪', // 巻き戻し
 		'se23e' => '[☆]', // 星座
 		'se23f' => self::$pictograms['d009'], // おひつじ座
@@ -1335,7 +1335,7 @@ public function convert_pict($buffer) {
 		'se339' => self::$pictograms['d266'], // パン
 		'se33a' => '[ソフトクリーム]', // ソフトクリーム
 		'se33b' => '[ポテト]', // フライドポテト
-		'se33c' => '[団子]', // 串団子 
+		'se33c' => '[団子]', // 串団子
 		'se33d' => '[お煎餅]', // せんべい
 		'se33e' => self::$pictograms['d265'], // ご飯
 		'se33f' => '[スパゲティ]', // スパゲティ
@@ -1437,21 +1437,21 @@ public function convert_pict($buffer) {
 		'se506' => '[城]', // お城 (洋)
 		'se507' => self::$pictograms['d058'], // 映画館
 		'se508' => self::$pictograms['d039'], // 工場
-		'se509' => '[東京タワー]', // 東京タワー 
-		'se50a' => self::$pictograms['d039'], // 109 
-		'se50b' => '[日本]', // 日本 
-		'se50c' => '[アメリカ]', // アメリカ 
-		'se50d' => '[フランス]', // フランス 
-		'se50e' => '[ドイツ]', // ドイツ 
-		'se50f' => '[イタリア]', // イタリア 
-		'se510' => '[イギリス]', // イギリス 
-		'se511' => '[スペイン]', // スペイン 
-		'se512' => '[ロシア]', // ロシア 
-		'se513' => '[中国]', // 中国 
-		'se514' => '[韓国]', // 韓国 
-		'se515' => '[白人]', // 白人 
-		'se516' => '[中国人]', // 中国人 
-		'se517' => '[インド人]', // インド人 
+		'se509' => '[東京タワー]', // 東京タワー
+		'se50a' => self::$pictograms['d039'], // 109
+		'se50b' => '[日本]', // 日本
+		'se50c' => '[アメリカ]', // アメリカ
+		'se50d' => '[フランス]', // フランス
+		'se50e' => '[ドイツ]', // ドイツ
+		'se50f' => '[イタリア]', // イタリア
+		'se510' => '[イギリス]', // イギリス
+		'se511' => '[スペイン]', // スペイン
+		'se512' => '[ロシア]', // ロシア
+		'se513' => '[中国]', // 中国
+		'se514' => '[韓国]', // 韓国
+		'se515' => '[白人]', // 白人
+		'se516' => '[中国人]', // 中国人
+		'se517' => '[インド人]', // インド人
 		'se518' => '[おじいちゃん]', // おじいちゃん
 		'se519' => '[おばあちゃん]', // おばあちゃん
 		'se51a' => '[赤ちゃん]', // あかちゃん
@@ -1484,13 +1484,13 @@ public function convert_pict($buffer) {
 		'se535' => '[O型]', // O型
 		'se536' => self::$pictograms['d091'], // 足あと
 		'se537' => self::$pictograms['d239'], // TM (商標)
-		'se538' => 'J-', 
-		'se539' => 'Sky', 
-		'se53a' => '“', 
-		'se53b' => '”', 
-		'se53c' => '◎V', 
-		'se53d' => 'odaf', 
-		'se53e' => 'one', 
+		'se538' => 'J-',
+		'se539' => 'Sky',
+		'se53a' => '“',
+		'se53b' => '”',
+		'se53c' => '◎V',
+		'se53d' => 'odaf',
+		'se53e' => 'one',
 		'e253'  => '[指]', // 人差し指
 		'e254'  => self::$pictograms['d049'], // カップル
 		'e255'  => '[初心者]', // 若葉マーク
@@ -1742,7 +1742,7 @@ public function convert_pict($buffer) {
 	$translated = apply_filters('pictogram_table/ktai_style.php', $translated);
 	$buffer = preg_replace(
 		'!<img localsrc="([^"]+)"( alt="(' . KtaiStyle::DOUBLE_QUOTED_STRING_REGEX . ')")?[^/>]*/?>!se', // <?php /* syntax hilighting fix */
-		'isset($translated["$1"]) ? $translated["$1"] : ("$3" ? "$3" : "〓")', 
+		'isset($translated["$1"]) ? $translated["$1"] : ("$3" ? "$3" : "〓")',
 		$buffer);
 	$entities = array(
 		'&spades;' => self::$pictograms['d081'],
@@ -1788,10 +1788,10 @@ public function pickup_pics($buffer) {
 	}
 	mb_regex_encoding($this->charset);
 	$replaced = mb_ereg_replace(
-		"([\xf8\x40-\xf8\x5b]|[\xf8\x5d-\xf8\xfc]|[\xf9\x40-\xf9\x5b]|[\xf9\x5d-\xf9\xfc])", 
-		'isset($pictograms["\1"]) ? 
-		"<img localsrc=\"" . $pictograms["\1"] . "\" />" : 
-		"<img localsrc=\"d\" alt=\"" . "[0x" . bin2hex("\1") . "]\" />"', 
+		"([\xf8\x40-\xf8\x5b]|[\xf8\x5d-\xf8\xfc]|[\xf9\x40-\xf9\x5b]|[\xf9\x5d-\xf9\xfc])",
+		'isset($pictograms["\1"]) ?
+		"<img localsrc=\"" . $pictograms["\1"] . "\" />" :
+		"<img localsrc=\"d\" alt=\"" . "[0x" . bin2hex("\1") . "]\" />"',
 		$buffer, 'e');
 	if ($replaced) {
 		$replaced = mb_ereg_replace("\xf8\x5c", '<img localsrc="d" alt="[0xf85c]" />', $replaced);
@@ -1803,49 +1803,6 @@ public function pickup_pics($buffer) {
 // ===== End of class ====================
 }
 
-/* ==================================================
- *   KtaiService_imode_mova class
-   ================================================== */
-
-class KtaiService_imode_mova extends KtaiService_imode {
-
-/* ==================================================
- * @param	string  $user_agent
- * @return	object  $this
- */
-public function __construct($user_agent) {
-	parent::__construct($user_agent);
-	$this->theme      = ks_option('ks_theme_mova');
-	$this->type       = 'mova';
-	$this->flat_rate  = false;
-	if (preg_match('!1\.0/([-_.a-zA-Z0-9]+)(/c(\d+)(/\w+)*?(/ser(\w+))?)?!', $user_agent, $specs)) {
-		$this->term_name  = $specs[1];
-		$this->term_ID    = isset($specs[6]) ? $specs[6] : NULL;
-		$this->cache_size = ($specs[3] > 0) ? intval($specs[3]) * 1024 : 5120;
-	} else {
-		$this->cache_size = 5120;
-	}
-	$this->textarea_size = 5000;
-	$this->page_size  = 5000;
-	$this->preamble   = '';
-	$this->xhtml_head = '';
-	return;
-}
-
-/* ==================================================
- * @param	string  $buffer
- * @return	string  $buffer
- */
-public function shrink_post_split($buffer) {
-	$buffer = str_replace('&nbsp;', ' ', $buffer);
-	$buffer = preg_replace('!\s*</(li|dt|dd|option)>\s*!', '', $buffer);
-	$buffer = preg_replace('! ?/>!', '>', $buffer);
-/*	$buffer = preg_replace('!<([-~_= a-zA-Z0-9%.,:;\'"/#*+]+?) ?/>!', '<$1>', $buffer); */
-	return parent::shrink_post_split($buffer);
-}
-
-// ===== End of class ====================
-}
 
 /* ==================================================
  *   KtaiService_imode_FOMA class
@@ -1938,16 +1895,16 @@ protected function input_to_style($buffer) {
 				switch ($istyle[2]) {
 				case 1: // Fullwidth Kana
 					$style .= '-wap-input-format:&quot;*&lt;ja:h&gt;&quot;';
-					break; 
+					break;
 				case 2: // Halfwidth Kana
 					$style .= '-wap-input-format:&quot;*&lt;ja:hk&gt;&quot;';
-					break; 
+					break;
 				case 3: // Alphabet
 					$style .= '-wap-input-format:&quot;*&lt;ja:en&gt;&quot;';
-					break; 
+					break;
 				case 4: // Numeric
 					$style .= '-wap-input-format:&quot;*&lt;ja:n&gt;&quot;';
-					break; 
+					break;
 				}
 				$html = str_replace($istyle[0], '', $html);
 			}

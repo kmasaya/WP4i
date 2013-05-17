@@ -156,7 +156,6 @@ class KtaiStyle{
             case 'ks_time_format':
                 return 'H:i';
             case 'ks_theme_touch':
-            case 'ks_theme_mova':
             case 'ks_theme_foma':
             case 'ks_theme_ezweb':
             case 'ks_theme_sb_3g':
