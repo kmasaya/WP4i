@@ -95,7 +95,7 @@ class KtaiServices{
             $ktai->term_name = 'PlayStation Portable';
         } elseif( preg_match( '!SONY/COM!', $ua ) ){
             $ktai = new KtaiService_Other( $ua );
-            $ktai->term_name = 'Somy mylo';
+            $ktai->term_name = 'Sony mylo';
         } elseif( preg_match( '/(\bNitro\) Opera|Nintendo (\w+);)/', $ua, $type ) ){
             $ktai = new KtaiService_Other( $ua );
             $ktai->term_name = isset( $type[2] ) ? "Nintendo $type[2]" : 'Nintendo DS';
