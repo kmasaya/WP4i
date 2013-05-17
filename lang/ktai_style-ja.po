@@ -262,9 +262,6 @@ msgstr "FOMA 用 (ドコモ)"
 msgid "For EZweb (au)"
 msgstr "EZweb 用 (au)"
 
-msgid "For SoftBank PDC"
-msgstr "ソフトバンク PDC 端末用"
-
 msgid "For SoftBank 3G"
 msgstr "ソフトバンク 3G 端末用"
 

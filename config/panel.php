@@ -184,7 +184,6 @@ class KtaiStyle_Config{
         register_setting( self::THEME_OPTIONS, 'ks_theme_mova' );
         register_setting( self::THEME_OPTIONS, 'ks_theme_foma' );
         register_setting( self::THEME_OPTIONS, 'ks_theme_ezweb' );
-        register_setting( self::THEME_OPTIONS, 'ks_theme_sb_pdc' );
         register_setting( self::THEME_OPTIONS, 'ks_theme_sb_3g' );
         register_setting( self::THEME_OPTIONS, 'ks_theme_willcom' );
         register_setting( self::THEME_OPTIONS, 'ks_theme_emobile' );
@@ -204,7 +203,6 @@ class KtaiStyle_Config{
         $theme_mova = $Ktai_Style->get_option( 'ks_theme_mova' );
         $theme_foma = $Ktai_Style->get_option( 'ks_theme_foma' );
         $theme_ezweb = $Ktai_Style->get_option( 'ks_theme_ezweb' );
-        $theme_sb_pdc = $Ktai_Style->get_option( 'ks_theme_sb_pdc' );
         $theme_sb_3g = $Ktai_Style->get_option( 'ks_theme_sb_3g' );
         $theme_willcom = $Ktai_Style->get_option( 'ks_theme_willcom' );
         $theme_emobile = $Ktai_Style->get_option( 'ks_theme_emobile' );
@@ -356,7 +354,6 @@ class KtaiStyle_Config{
                     $careers[] = array( 'label' => 'theme_mova', 'desc' => __( 'For mova (docomo)', 'ktai_style' ) );
                     $careers[] = array( 'label' => 'theme_foma', 'desc' => __( 'For FOMA (docomo)', 'ktai_style' ) );
                     $careers[] = array( 'label' => 'theme_ezweb', 'desc' => __( 'For EZweb (au)', 'ktai_style' ) );
-                    $careers[] = array( 'label' => 'theme_sb_pdc', 'desc' => __( 'For SoftBank PDC', 'ktai_style' ) );
                     $careers[] = array( 'label' => 'theme_sb_3g', 'desc' => __( 'For SoftBank 3G', 'ktai_style' ) );
                     $careers[] = array( 'label' => 'theme_willcom', 'desc' => __( 'For WILLCOM', 'ktai_style' ) );
                     $careers[] = array( 'label' => 'theme_emobile', 'desc' => __( 'For EMobile Handset', 'ktai_style' ) );
@@ -591,7 +588,6 @@ class KtaiStyle_Config{
         register_setting( self::DELETE_OPTIONS, 'ks_theme_mova' );
         register_setting( self::DELETE_OPTIONS, 'ks_theme_foma' );
         register_setting( self::DELETE_OPTIONS, 'ks_theme_ezweb' );
-        register_setting( self::DELETE_OPTIONS, 'ks_theme_sb_pdc' );
         register_setting( self::DELETE_OPTIONS, 'ks_theme_sb_3g' );
         register_setting( self::DELETE_OPTIONS, 'ks_theme_willcom' );
         register_setting( self::DELETE_OPTIONS, 'ks_theme_emobile' );
@@ -800,7 +796,7 @@ class KtaiStyle_Config{
      * @return	none
      */
     public function delete_options(){
-        $theme_opts = array( 'ks_theme', 'ks_theme_touch', 'ks_theme_mova', 'ks_theme_foma', 'ks_theme_ezweb', 'ks_theme_sb_pdc', 'ks_theme_sb_3g', 'ks_theme_willcom', 'ks_theme_emobile' );
+        $theme_opts = array( 'ks_theme', 'ks_theme_touch', 'ks_theme_mova', 'ks_theme_foma', 'ks_theme_ezweb', 'ks_theme_sb_3g', 'ks_theme_willcom', 'ks_theme_emobile' );
         foreach( $theme_opts as $t ){
             delete_option( $t );
         }

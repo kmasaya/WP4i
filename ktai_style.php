@@ -159,7 +159,6 @@ class KtaiStyle{
             case 'ks_theme_mova':
             case 'ks_theme_foma':
             case 'ks_theme_ezweb':
-            case 'ks_theme_sb_pdc':
             case 'ks_theme_sb_3g':
             case 'ks_theme_willcom':
             case 'ks_theme_emobile':
