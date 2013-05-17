@@ -2,12 +2,11 @@
 /*
 Plugin Name: WP4i
 Plugin URI: http://w32.jp/
-Version: 0.0.1
 Description: Provides lightweight pages and simple admin interfaces for mobile phones.
+Version: 0.0.1
 Author: Katou Masaya
 Author URI: http://w32.jp/
-Text Domain: wp4i
-Domain Path: /lang
+License: GPL2
 */
 define ( 'WP4I_VERSION', '0.0.1' );
 

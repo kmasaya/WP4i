@@ -15,17 +15,17 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:2c,1;_n:1,2;_n_noop:1,2;_c;__ngettext:1,2;__ngettext_noop:1,2\n"
 
 # ----- ktai_style.php --------------------------------------------------
-msgid "http://wordpress.org/extend/plugins/ktai-style/"
-msgstr "http://wppluginsj.sourceforge.jp/ktai_style/"
+msgid "http://w32.jp/"
+msgstr "http://w32.jp/"
 
 msgid "Provides lightweight pages and simple admin interfaces for mobile phones."
 msgstr "携帯電話用に軽量化したページおよび簡単な管理インターフェースを提供します。"
 
-msgid "IKEDA Yuriko"
-msgstr "池田百合子"
+msgid "Katou Masaya"
+msgstr "加藤真也"
 
-msgid "http://en.yuriko.net/"
-msgstr "http://www.yuriko.net/cat/wordpress/"
+msgid "http://w32.jp/"
+msgstr "http://w32.jp/"
 
 msgid "Can't display pages. Bacause mobile phone templates are collapsed."
 msgstr "携帯電話向けテンプレートが壊れているため表示できません。"
