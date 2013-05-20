@@ -81,8 +81,8 @@ class KtaiServices{
         } elseif( preg_match( '/^UP\.Browser/', $ua ) ){
             require_once dirname( __FILE__ ) . '/ezweb.php';
             $ktai = new KtaiService_EZweb_HDML( $ua );
-        } elseif( preg_match( '/\b(iP(hone|od);|Android )/', $ua, $name ) && ks_option( 'ks_theme_touch' ) ){
-            $ktai = new KtaiService_Touch( $ua );
+        } elseif( preg_match( '/\b(iP(hone|od);|Android )/', $ua, $name ) && ks_option( 'ks_theme_smartphone' ) ){
+            $ktai = new KtaiService_Smartphone( $ua );
             $ktai->term_name = $name[1];
         } elseif( preg_match( '!PDA; SL-\w+!', $ua, $name ) ){
             $ktai = new KtaiService_Other_Japan( $ua );
@@ -1139,10 +1139,10 @@ class KtaiService_Other_Japan extends KtaiService_Other{
 
 
 /* ==================================================
- *   KtaiService_Touch class
+ *   KtaiService_Smartphone class
    ================================================== */
 
-class KtaiService_Touch extends KtaiService_Other{
+class KtaiService_Smartphone extends KtaiService_Other{
 
     /* ==================================================
  * @param	string  $user_agent
@@ -1151,8 +1151,8 @@ class KtaiService_Touch extends KtaiService_Other{
  */
     public function __construct( $user_agent ){
         parent::__construct( $user_agent );
-        $this->theme = ks_option( 'ks_theme_touch' );
-        $this->type = 'TouchPhone';
+        $this->theme = ks_option( 'ks_theme_smartphone' );
+        $this->type = 'Smartphone';
         add_action( 'ktai_wp_head', array( $this, 'viewport' ) );
 
         return;

@@ -105,7 +105,7 @@ class KtaiStyle_Login{
         <head>
             <meta http-equiv="Content-Type"
                   content="<?php echo esc_attr( $this->mime_type ); ?>; charset=<?php echo esc_attr( $this->iana_charset ); ?>"/>
-            <?php if( $this->base->is_ktai( 'type' ) == 'TouchPhone' ){ ?>
+            <?php if( $this->base->is_ktai( 'type' ) == 'Smartphone' ){ ?>
                 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
             <?php } ?>
             <meta name="robots" content="noindex,nofollow"/>
@@ -121,7 +121,7 @@ class KtaiStyle_Login{
         <?php
         $message = apply_filters( 'login_message', $message );
         if( !empty( $message ) ){
-            echo $message . "�n";
+            echo $message . ""; //TODO
         }
         if( $wp_error && $wp_error->get_error_code() ){
             $errors = '';

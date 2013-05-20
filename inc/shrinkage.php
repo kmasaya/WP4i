@@ -424,7 +424,7 @@ class KtaiShrinkage{
         } elseif( preg_match( '!^\./!', $url ) ){
             $current = preg_replace( '!\?.*$!', '', $_SERVER['REQUEST_URI'], 1 );
             $url = $this->url_host . trailingslashit( $current ) . preg_replace( '!^\./!', '', $url, 1 );
-        } // don't touch relative URL with "../"
+        } // don't smartphone relative URL with "../"
         return $url;
     }
 
