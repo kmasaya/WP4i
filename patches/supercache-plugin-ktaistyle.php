@@ -18,8 +18,8 @@ if( function_exists( 'add_cacheaction' ) ) :
         }
         $conditions[] = 'RewriteCond %{HTTP_USER_AGENT} !^(DoCoMo/|J-PHONE/|J-EMULATOR/|Vodafone/|MOT(EMULATOR)?-|SoftBank/|[VS]emulator/|KDDI-|UP\.Browser/|emobile/|Huawei/|IAC/|Nokia|mixi-mobile-converter/)';
         $conditions[] = 'RewriteCond %{HTTP_USER_AGENT} !(DDIPOCKET;|WILLCOM;|Opera\ Mini|Opera\ Mobi|PalmOS|Windows\ CE;|PDA;\ SL-|PlayStation\ Portable;|SONY/COM|Nitro|Nintendo)';
-        if( function_exists( 'ks_option' ) && ks_option( 'ks_theme_smartphone' ) ){
-            $conditions[] = 'RewriteCond %{HTTP_USER_AGENT} !(iPhone;|iPod;|Android)';
+        if( ( function_exists( 'ks_option' ) && ks_option( 'ks_theme_tablet' ) ) || ( function_exists( 'ks_option' ) && ks_option( 'ks_theme_smartphone' ) ) ){
+            $conditions[] = 'RewriteCond %{HTTP_USER_AGENT} !(iPhone;|iPod;|iPad;|Android)';
         }
 
         return $conditions;
@@ -37,8 +37,8 @@ if( function_exists( 'add_cacheaction' ) ) :
             $cache_ktaistyle = 0;
         }
         $ktaistyle_browsers = 'DoCoMo/, J-PHONE/, J-EMULATOR/, Vodafone/, MOT-, MOTEMULATOR-, SoftBank/, emulator/, DDIPOCKET;, WILLCOM;, KDDI-, UP.Browser/, emobile/, Huawei/, IAC/, Nokia, Opera Mini, Opera Mobi, Palm OS, Windows CE;, PDA; SL-, PlayStation Portable, SONY/COM, Nitro, Nintendo, mixi-mobile-converter/';
-        if( function_exists( 'ks_option' ) && ks_option( 'ks_theme_smartphone' ) ){
-            $ktaistyle_browsers .= ', iPhone;, iPod;, Android';
+        if( ( function_exists( 'ks_option' ) && ks_option( 'ks_theme_tablet' ) ) || ( function_exists( 'ks_option' ) && ks_option( 'ks_theme_smartphone' ) ) ){
+            $ktaistyle_browsers .= ', iPhone;, iPod;, iPad;, Android';
         }
 
         if( isset( $_POST['cache_ktaistyle'] ) && $valid_nonce ){
