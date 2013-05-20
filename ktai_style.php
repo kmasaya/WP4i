@@ -155,6 +155,7 @@ class KtaiStyle{
                 return 'n/j H:i';
             case 'ks_time_format':
                 return 'H:i';
+            case 'ks_theme_tablet':
             case 'ks_theme_smartphone':
             case 'ks_theme_foma':
             case 'ks_theme_ezweb':
@@ -863,6 +864,7 @@ E__O__T;
             case 'SoftBank':
                 $header = '<style><![CDATA[ p {margin-bottom:1em;} ]]></style>';
                 break;
+            case 'Tablet':
             case 'Smartphone':
                 $header = '<meta name="viewport" content="width=device-width,initial-scale=1.0" />';
             default:

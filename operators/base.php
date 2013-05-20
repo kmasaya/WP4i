@@ -81,8 +81,11 @@ class KtaiServices{
         } elseif( preg_match( '/^UP\.Browser/', $ua ) ){
             require_once dirname( __FILE__ ) . '/ezweb.php';
             $ktai = new KtaiService_EZweb_HDML( $ua );
-        } elseif( preg_match( '/\b(iP(hone|od);|Android )/', $ua, $name ) && ks_option( 'ks_theme_smartphone' ) ){
+        } elseif( preg_match( '/\b(iP(hone|od);|Android.*Mobile)/', $ua, $name ) && ks_option( 'ks_theme_smartphone' ) ){
             $ktai = new KtaiService_Smartphone( $ua );
+            $ktai->term_name = $name[1];
+        } elseif( preg_match( '/\b(iPad;)|Android/', $ua, $name ) && ks_option( 'ks_theme_tablet' ) ){
+            $ktai = new KtaiService_Tablet( $ua );
             $ktai->term_name = $name[1];
         } elseif( preg_match( '!PDA; SL-\w+!', $ua, $name ) ){
             $ktai = new KtaiService_Other_Japan( $ua );
@@ -1137,6 +1140,32 @@ class KtaiService_Other_Japan extends KtaiService_Other{
     // ===== End of class ====================
 }
 
+
+/* ==================================================
+ *   KtaiService_Tablet class
+   ================================================== */
+
+class KtaiService_Tablet extends KtaiService_Other{
+
+    /* ==================================================
+ * @param	string  $user_agent
+ * @return	object  $this
+ * @since	1.81
+ */
+    public function __construct( $user_agent ){
+        parent::__construct( $user_agent );
+        $this->theme = ks_option( 'ks_theme_tablet' );
+        $this->type = 'Tablet';
+        add_action( 'ktai_wp_head', array( $this, 'viewport' ) );
+
+        return;
+    }
+
+    public function viewport(){
+        echo '<meta name="viewport" content="width=device-width,initial-scale=1.0" />' . "\n";
+    }
+    // ===== End of class ====================
+}
 
 /* ==================================================
  *   KtaiService_Smartphone class

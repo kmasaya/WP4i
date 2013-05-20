@@ -105,7 +105,7 @@ class KtaiStyle_Login{
         <head>
             <meta http-equiv="Content-Type"
                   content="<?php echo esc_attr( $this->mime_type ); ?>; charset=<?php echo esc_attr( $this->iana_charset ); ?>"/>
-            <?php if( $this->base->is_ktai( 'type' ) == 'Smartphone' ){ ?>
+            <?php if( $this->base->is_ktai( 'type' ) == 'Tablet' || $this->base->is_ktai( 'type' ) == 'Smartphone'){ ?>
                 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
             <?php } ?>
             <meta name="robots" content="noindex,nofollow"/>

@@ -7,7 +7,7 @@
 /*
   Usage:
 
-  1) Duplicate wp-cache-config-sample.php as wp-cache-config.php 
+  1) Duplicate wp-cache-config-sample.php as wp-cache-config.php
      and insert below codeinto line 19 (WP-Cache);
      AFTER setting $cache_rejected_user_agent.
 
@@ -25,7 +25,7 @@ if( !defined( 'KTAI_COOKIE_PCVIEW' ) ) :
 endif;
 
 if( !isset( $_COOKIE[KTAI_COOKIE_PCVIEW] ) ){
-    $ks_mobile_agents = array( 'DoCoMo/', 'J-PHONE/', 'J-EMULATOR/', 'Vodafone/', 'MOT-', 'MOTEMULATOR-', 'SoftBank/', 'emulator/', 'DDIPOCKET;', 'WILLCOM;', 'KDDI-', 'UP.Browser/', 'emobile/', 'Huawei/', 'IAC/', 'Nokia', 'Opera Mini', 'Opera Mobi', 'PalmOS', 'Windows CE;', 'PDA; SL-', 'PlayStation Portable', 'SONY/COM', 'Nitro', 'Nintendo', 'mixi-mobile-converter/', 'iPhone;', 'iPod;', 'Android', );
+    $ks_mobile_agents = array( 'DoCoMo/', 'J-PHONE/', 'J-EMULATOR/', 'Vodafone/', 'MOT-', 'MOTEMULATOR-', 'SoftBank/', 'emulator/', 'DDIPOCKET;', 'WILLCOM;', 'KDDI-', 'UP.Browser/', 'emobile/', 'Huawei/', 'IAC/', 'Nokia', 'Opera Mini', 'Opera Mobi', 'PalmOS', 'Windows CE;', 'PDA; SL-', 'PlayStation Portable', 'SONY/COM', 'Nitro', 'Nintendo', 'mixi-mobile-converter/', 'iPad', 'iPhone;', 'iPod;', 'Android', );
 
     $ua = $_SERVER['HTTP_USER_AGENT'];
     foreach( $ks_mobile_agents as $a ){

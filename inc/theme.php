@@ -15,7 +15,7 @@ class KtaiThemes{
     private $template_dir;
     private $template_uri;
     private $theme_data;
-    public static $target = array( 'smartphone', 'foma', 'ezweb', 'sb_3g', 'willcom', 'emobile' );
+    public static $target = array( 'tablet', 'smartphone', 'foma', 'ezweb', 'sb_3g', 'willcom', 'emobile' );
     public static $default_menu = array( 'comments', 'months', 'years', 'cats', 'tags', 'pages', 'links' );
     public static $built_in_theme_root; // with trailing slash
     public static $built_in_theme_root_uri; // with trailing slash
@@ -127,6 +127,8 @@ class KtaiThemes{
         }
         if( empty( $dir ) ){
             delete_option( $option );
+        } elseif( $target == 'tablet' && $dir == self::SAME_THEME_AS_COMMON ){
+            update_option( self::OPTION_PREFIX . '_tablet', self::SAME_THEME_AS_COMMON );
         } elseif( $target == 'smartphone' && $dir == self::SAME_THEME_AS_COMMON ){
             update_option( self::OPTION_PREFIX . '_smartphone', self::SAME_THEME_AS_COMMON );
         } elseif( self::valid_dir_name( $dir ) ){
