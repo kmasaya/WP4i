@@ -1899,7 +1899,7 @@ class KtaiService_Softbank_3G extends KtaiService_Softbank {
         $this->require_id_msg = "ERROR: Please allow transmission of user infomation or your terminal's manifacture number.\nGo Yahoo! Japan &gt; My Softbank (User Support) &gt; Misc Application &gt; Transmission of User Infomation.\nGo Yahoo! Keitai &gt; Common Settings &gt; Security Settings &gt; Manufacture Number.";
         $this->preamble   = '<?xml version="1.0" encoding="__CHARSET__"?>
 <!DOCTYPE html PUBLIC "-//J-PHONE//DTD XHTML Basic 1.0 Plus//EN" "xhtml-basic10-plus.dtd">'; // <?php /* syntax hilighting fix */
-        $this->xhtml_head = '<html>';
+        $this->xhtml_head = '<html xmlns="http://www.w3.org/1999/xhtml">';
         add_action('ktai_wp_head', array($this, 'paragraph_margin') );
         return;
     }
